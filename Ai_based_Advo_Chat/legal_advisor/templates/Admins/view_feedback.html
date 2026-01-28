@@ -1,0 +1,53 @@
+{% extends 'Admins/common.html' %}
+{% load static %}
+{% block header %}
+
+
+<style>
+    .table {
+        border-radius: 15px;
+        border: 1px solid rgb(225, 227, 228);
+        max-width: 80%;
+        text-align: center;
+    }
+</style>
+
+<br>
+<center>
+    {% if view %}
+    <h1><b>Feedbacks</b></h1><br>
+
+    <table border="1" cellpadding="15px" cellspacing="10px" class="table">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Sub</th>
+            <th>Date</th>
+            <th>Feedback</th>
+            <th>Action</th>
+        </tr>
+        {% for i in view %}
+        <tr>
+            {% if i.uid %}
+            <td>{{i.uid.name}}</td>
+            {% else %}
+            <td>{{i.aid.name}}</td>
+            {% endif %}
+            <td>{{i.Type}}</td>
+            <td>{{i.sub}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.Feedback}}</td>
+            
+            <td>
+                <a href="/delete_feedback?fid={{i.id}}" style="color: orangered;">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No Data Has Found!</p>
+    {% endif %}
+
+
+    {% endblock %}

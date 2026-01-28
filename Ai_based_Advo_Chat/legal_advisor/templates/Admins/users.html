@@ -1,0 +1,145 @@
+{% extends 'Admins/common.html' %}
+{% load static %}
+{% block header %}
+
+{% for i in messages %}
+<script>
+    alert("{{i}}")
+</script>
+{% endfor %}
+
+<!-- <style>
+    .user_card {
+        width: 100px;
+    }
+
+    table {
+        vertical-align: center !important;
+    }
+</style>
+
+<div class="container">
+    <div class="card shadow my-5" style="border-radius: 15px;">
+        <h4 class="card-header"><b>User Table</b></h4>
+        <div class="card-body" style="width: 100%;">
+            <form class="mb-3">
+                <label for="searchBox">Search User data</label>
+                <input type="text" id="searchBox" name="searchBox" placeholder="Search Here" class="form-control"
+                    style="border-radius: 10px;width: 100%;">
+                <small class="form-text feedback"></small>
+            </form>
+            <center>
+                <table id="tt" style="text-align: center;" cellpadding="10px" cellspacing="10px">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
+                            <th>DOB</th>
+                            <th>District</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    {% for i in view %}
+                    <tbody>
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td><img src="../static/media/{{i.image}}" alt="" class="user_card"></td>
+                            <td>{{i.name}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.phone}}</td>
+                            <td>{{i.address}}</td>
+                            <td>{{i.dob}}</td>
+                            <td>{{i.district}}</td>
+                            <td>{{i.gender}}</td>
+                            <td data-searchable="false">
+                                <div class="btn-group btn-group-sm" role="group">
+                                   
+                                    <button type="button"
+                                        class="btn btn-outline-dark">Approve</button>&nbsp;&nbsp;&nbsp;
+                                    <button type="button" class="btn btn-outline-dark">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </center>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+</div> -->
+<br><br>
+<center><h3><b>User Details</b></h3> </center>
+<br><br>
+<div class="row m-5">
+
+    {% for i in view %}
+    <div class="col">
+        <div class="card" style="width: 350px;">
+            <img src="../static/media/{{i.image}}"  class="card-img-top" alt="...">
+            <div class="card-body">
+                <center>
+                    <h5 class="card-title"><b>{{i.name}}</b></h5>
+                    <p class="card-text"><b>Email</b> : {{i.email}} <br> <img src="/static/image/contacts.png" width="20px" alt=""> Contact : {{i.phone}} <br>{{i.address}} <br>Date of
+                        Birth : {{i.dob}} <br> <img src="/static/image/gender.png" width="20px"> Gender : {{i.gender}}</p>
+                    <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p> -->
+                </center>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+
+
+
+<script>
+    const [form] = document.forms;
+    const feedback = document.querySelector('.feedback');
+    const table = document.querySelector('table');
+    const tbodyRows = [...table.tBodies[0].rows];
+
+    const getCellValue = cell => {
+        return cell.innerText || cell.textContent;
+    }
+
+    form.searchBox.addEventListener('input', e => {
+        const term = e.target.value.toLowerCase();
+        const hasValue = !!e.target.value.length;
+        let resultCount = 0;
+
+        tbodyRows.forEach(row => {
+            const cells = row.querySelectorAll('td:not([data-searchable="false"])');
+            let isFound = false;
+
+            cells.forEach(cell => {
+                const value = getCellValue(cell).toLowerCase();
+                const isMatch = value.includes(term);
+
+                if (isMatch) {
+                    isFound = true;
+                }
+
+                cell.classList.toggle('is-match', hasValue && isMatch);
+            });
+
+            row.classList.toggle('is-hidden', !isFound);
+            resultCount += isFound ? 1 : 0;
+        });
+
+        feedback.textContent = hasValue
+            ? resultCount === 1
+                ? 'Showing 1 result'
+                : `Showing ${resultCount} results`
+            : null;
+    });
+</script>
+
+{% endblock %}

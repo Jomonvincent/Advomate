@@ -1,0 +1,56 @@
+{% extends 'User/common.html' %}
+{% load static %}
+{% block header %}
+
+<style>
+    .table {
+        border-radius: 15px;
+        border: 1px solid rgb(225, 227, 228);
+        max-width: 60%;
+        text-align: center;
+    }
+</style>
+
+<br>
+<center>
+    <h1><b>View Case Status</b></h1><br>
+
+    <table border="1" cellpadding="15px" cellspacing="10px" class="table">
+        <tr>
+            <th>Advocate</th>
+            <th>Sub</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Request</th>
+            <th>More</th>
+            <th>Action</th>
+
+
+        </tr>
+        {% for i in view %}
+        <tr>
+            <td>{{i.advocate.name}}</td>
+            <td>{{i.sub}}</td>
+            <td>{{i.desc}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.request}}</td>
+            <td><a href="/user_case_files?rid={{i.id}}">Info</a></td>
+            <td><a href="/userchat?aid={{i.advocate_id}}&email={{i.advocate.email}}"
+                    class="btn btn-outline-success">Chat <i class="fa fa-comments-o" aria-hidden="true"></i></a>
+
+                {% if i.request == 'Approved' %}
+                {% if i.status == 'Not_Updated' %}
+                {% else %}
+                <a href="/add_rating?aid={{i.advocate.loginid_id}}&rid={{i.id}}&email={{i.advocate.email}}" class="btn btn-outline-warning">Add Rating</a>
+                {% endif %}
+                {% else %}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</center>
+<br><br>
+
+{% endblock %}

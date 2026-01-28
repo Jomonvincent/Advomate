@@ -1,0 +1,66 @@
+{% extends 'Admins/common.html' %}
+{% load static %}
+{% block header %}
+
+<style>
+    .btn {
+        margin-top: 50px;
+    }
+</style>
+
+{% for i in messages %}
+<script>
+    alert("{{i}}")
+</script>
+{% endfor %}
+
+<br>
+
+<section class="ftco-section ftco-no-pt">
+    <div class="container" style="border-radius: 10px;">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+                <span class="subheading">Our Attorney</span>
+                <h2 class="mb-4">Our Registered Advocates</h2>
+            </div>
+        </div>
+        <div class="row m-3 my-5">
+            {% for i in view %}
+            <div class="col my-3">
+                <div class="card" style="border-radius: 10px;box-shadow: 0 0 2px 2px rgb(233, 233, 233);width: 300px;">
+                    <img src="/static/media/{{i.image}}" class="card-img-top" height="300px"
+                        alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <center>
+                            <h5 class="card-title"><b>ADV.{{i.name}}</b></h5>
+                            <!-- <p class="card-text">
+                                This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.
+                            </p> -->
+                            <p class="">{{i.category}}</p>
+                            <p class="">Email : {{i.email}}</p>
+                            <p class="">Phone : 📞 {{i.phone}}</p>
+                            <p class="">Address : {{i.address}}</p>
+                            <p class="">External : <a href="/static/media/{{i.files}}">Certificates</a></p>
+
+                            {% if i.loginid.is_active != 1 %}
+
+                            <a href="/approve_advocate?id={{i.loginid_id}}" class="btn btn-success">Approve</a>
+                            <a href="/reject_advocate?id={{i.loginid_id}}" class="btn btn-danger">Reject</a>
+                            {% elif i.loginid.is_active == 1 %}
+
+                            <a class="btn btn-outline-success">Approved</a>
+                            <a href="/reject_advocate?id={{i.loginid_id}}" class="btn btn-danger">Reject</a>
+                            {% else %}
+                            {% endif %}
+                        </center>
+                    </div>
+                </div>
+            </div><br><br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
