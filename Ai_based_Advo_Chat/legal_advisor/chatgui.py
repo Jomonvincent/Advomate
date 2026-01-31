@@ -6,14 +6,21 @@ import pickle
 import numpy as np
 
 from keras.models import load_model
-
-model = load_model("chatbot_model.h5")
 import json
 import random
 
-intents = json.loads(open("intents.json").read())
+# Load preprocessing artifacts first
 words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
+
+model = load_model("chatbot_model.h5")
+
+# Ensure the model input size matches the vocabulary length
+expected_input_len = model.input_shape[1] if hasattr(model, 'input_shape') and model.input_shape is not None else None
+if expected_input_len is not None and expected_input_len != len(words):
+    raise ValueError(f"Model expects input length {expected_input_len}, but `words.pkl` has length {len(words)}. Re-run `train_chatbot.py` to regenerate matching artifacts.")
+
+intents = json.loads(open("intents.json").read())
 
 
 def clean_up_sentence(sentence):

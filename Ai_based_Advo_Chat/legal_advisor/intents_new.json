@@ -1,0 +1,344 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Hi there",
+        "Hello AdvoMate",
+        "Hey there"
+      ],
+      "responses": [
+        "Hello — I'm AdvoMate, your legal information assistant. How can I help you today?",
+        "Hi! I can help with general legal information about Indian law, IPC sections, FIRs, arrest and bail, courts, and how to find a lawyer. This is general information, not legal advice.",
+        "Hey! Ask me about IPC sections, police procedure, courts, or legal rights and I'll explain in simple language."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you",
+        "Talk later",
+        "Catch you later",
+        "I have to go",
+        "Signing off"
+      ],
+      "responses": [
+        "Goodbye — take care. If you need more legal information, come back anytime. (Not legal advice.)",
+        "Thanks for using AdvoMate. For specific legal action, consult a qualified lawyer."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "Much appreciated",
+        "Thanks a lot",
+        "Thanks for the help",
+        "Cheers"
+      ],
+      "responses": [
+        "You're welcome! Glad to help. If you need further clarification, ask away.",
+        "Happy to help — remember to consult a lawyer for case-specific advice."
+      ]
+    },
+    {
+      "tag": "general_legal_info",
+      "patterns": [
+        "What can you help me with?",
+        "What do you do?",
+        "How can you assist me legally?",
+        "What topics do you cover?",
+        "Are you a lawyer?",
+        "Tell me about AdvoMate",
+        "What information can I get here?",
+        "Do you give legal advice?"
+      ],
+      "responses": [
+        "I provide general legal information on Indian law topics like IPC sections, criminal vs civil law, FIRs, arrest and bail, courts and procedures, rights of citizens, and how to find a lawyer. This is general information and not legal advice.",
+        "I can explain legal concepts and point out common steps in processes such as filing an FIR, arrest and bail procedures, and difference between criminal/civil matters. For case-specific legal advice, consult a qualified lawyer."
+      ]
+    },
+    {
+      "tag": "ipc_section_query",
+      "patterns": [
+        "What is IPC section 302?",
+        "Explain IPC 302",
+        "Tell me about section 420 of IPC",
+        "What does IPC section 498A mean?",
+        "Define IPC 376",
+        "What is the offence under IPC 379?",
+        "Can you explain section 375 of IPC?",
+        "What is \"IPC {section}\"?",
+        "Explain section {section}",
+        "Tell me what Section {number} IPC covers",
+        "What does 'Section {section} IPC' refer to?",
+        "Give me details of IPC {section}"
+      ],
+      "responses": [
+        "Section {section} of the Indian Penal Code (IPC) refers to a specific offence defined by statute. Generally I can summarise the conduct it targets and give a simple example. For the exact legal text and application speak with a lawyer. (This is information, not legal advice.)",
+        "IPC section {section} sets out an offence and usually lists its elements and penalties. For example, Section 302 commonly refers to murder; Section 420 commonly refers to cheating. Tell me the section number and I’ll provide a plain-language description and typical examples."
+      ]
+    },
+    {
+      "tag": "ipc_punishment_query",
+      "patterns": [
+        "What is the punishment under section 420?",
+        "Penalty for IPC 302",
+        "How is section 498A punished?",
+        "Punishment for IPC 376",
+        "What are the consequences for section {section}?",
+        "What penalty does section {section} attract?",
+        "How severe is the punishment under section {number}?",
+        "What is the legal punishment for Section {section}?",
+        "Tell me punishment for IPC {section}"
+      ],
+      "responses": [
+        "Punishment under an IPC section depends on the section’s wording and judicial interpretation — it may provide imprisonment (fixed term, life), fine, or both. Some serious offences can attract life imprisonment or, in rare cases, the death penalty under the statute. For precise sentencing ranges in a case, consult the statute text or a lawyer.",
+        "If you give me the section number I can summarise the usual penalties and explain what makes an offence more or less severe (evidence, intent, prior convictions). This is general information only."
+      ]
+    },
+    {
+      "tag": "ipc_definition_query",
+      "patterns": [
+        "What does cheating mean in IPC?",
+        "Define theft under IPC",
+        "How is murder defined in Indian law?",
+        "Definition of abetment under IPC",
+        "What is criminal breach of trust?",
+        "Explain dowry death",
+        "Define sexual assault under IPC",
+        "What is criminal intimidation?"
+      ],
+      "responses": [
+        "A legal definition describes the conduct and elements required to prove the offence. For example, 'theft' typically requires dishonest removal of movable property with intent to permanently deprive. I can give a simple summary and example if you name the term. This is general information, not legal advice.",
+        "Definitions can be technical and depend on elements like intent or coercion. Tell me the offence you want defined and I’ll explain it in simple language with an example."
+      ]
+    },
+    {
+      "tag": "ipc_applicability_query",
+      "patterns": [
+        "Does IPC 302 apply if death was accidental?",
+        "Can Section 420 be used for online fraud?",
+        "Is Section 498A applicable in a case of emotional abuse?",
+        "Would Section 294 apply to an obscene message sent online?",
+        "Can IPC section {section} be invoked for this behaviour?",
+        "Would this fact pattern fall under 376 or another IPC section?",
+        "Can the same act attract multiple IPC sections?",
+        "How do I know if an act is theft or cheating?"
+      ],
+      "responses": [
+        "Whether a section applies depends on the facts and whether the legal elements are present (intent, causation, conduct). Some sections strictly require specific intent; others cover negligent acts. Provide a short factual summary and I can indicate commonly relevant sections and issues to consider. This is not legal advice.",
+        "Many incidents can give rise to multiple offences; the investigating agency or prosecutor decides the formal charges based on evidence. If you need to challenge or defend charges, consult a lawyer."
+      ]
+    },
+    {
+      "tag": "criminal_vs_civil",
+      "patterns": [
+        "What's the difference between criminal and civil law?",
+        "Is theft criminal or civil?",
+        "Can I sue someone and also press criminal charges?",
+        "Difference between damages and punishment",
+        "When is a case criminal vs civil?",
+        "Can I file both a police case and a civil claim?",
+        "Explain criminal vs civil simply"
+      ],
+      "responses": [
+        "Criminal law deals with offences against the state/society and may lead to punishment (imprisonment/fine). Civil law resolves disputes between people or organisations, usually seeking compensation or injunctions. Some incidents can trigger both criminal and civil actions.",
+        "If you want compensation, pursue a civil claim; if the state prosecutes a wrong, that’s criminal. A lawyer can advise on parallel remedies in your situation."
+      ]
+    },
+    {
+      "tag": "fir_process",
+      "patterns": [
+        "How do I file an FIR?",
+        "What is the procedure for lodging a police complaint?",
+        "Can I file an FIR online?",
+        "What details are needed to file an FIR?",
+        "What if police refuse to register an FIR?",
+        "Where do I go if my FIR is rejected?",
+        "How long does it take to register an FIR?",
+        "Steps after filing an FIR"
+      ],
+      "responses": [
+        "To file an FIR, go to the local police station with a factual account (time, place, what happened, witnesses). For cognizable offences the police should register an FIR; they must provide an FIR number. Keep a copy or acknowledgement for follow up. This is general information, not legal advice.",
+        "If police refuse to register a cognizable offence, ask to speak to the Station House Officer, contact higher police authorities, or consult a lawyer to help file a complaint in court or approach the magistrate."
+      ]
+    },
+    {
+      "tag": "arrest_and_bail",
+      "patterns": [
+        "What are my rights on arrest?",
+        "Can police arrest without a warrant?",
+        "What should I do if someone is arrested?",
+        "How do I apply for bail?",
+        "Difference between regular bail and anticipatory bail",
+        "Can I get bail for a non-bailable offence?",
+        "When should I call a lawyer for bail?",
+        "What happens after an arrest?"
+      ],
+      "responses": [
+        "On arrest, a person has rights: to be informed of grounds of arrest, to consult a lawyer, and to be produced before a magistrate within 24 hours (excluding travel time). If you or someone is arrested, contact a lawyer immediately and ask for the arrest memo and station details. This is general information, not legal advice.",
+        "Bail depends on whether the offence is bailable and the facts; anticipatory bail is a pre-arrest remedy available under certain circumstances and must be sought in court. A lawyer can advise the best approach based on charges and evidence."
+      ]
+    },
+    {
+      "tag": "courts_and_case_process",
+      "patterns": [
+        "How does a criminal case proceed?",
+        "What are the stages of a civil suit?",
+        "Explain the appeals process",
+        "What does remand mean?",
+        "How long do cases take?",
+        "What is the role of magistrate vs sessions court?",
+        "How are witnesses examined?",
+        "What happens after judgment?"
+      ],
+      "responses": [
+        "Criminal cases usually follow FIR → investigation → charge-sheet → trial → judgment → appeal. Civil suits follow plaint → written statement → evidence → judgment → appeal. Timelines vary widely depending on facts and court backlog.",
+        "Appeals are filed to higher courts within statutory time limits; some orders may need permission to appeal. Consult a lawyer for timeline expectations in your case."
+      ]
+    },
+    {
+      "tag": "rights_of_citizens",
+      "patterns": [
+        "What are my rights during arrest?",
+        "Can police search my home without permission?",
+        "What rights do victims have?",
+        "Rights of women under the law",
+        "What legal protections do children have?",
+        "What is the right to legal aid?",
+        "Rights during police interrogation",
+        "How to access victim support?"
+      ],
+      "responses": [
+        "Citizens have constitutional and statutory protections such as the right to life and personal liberty, protection from arbitrary arrest, and the right to legal representation. Victims also have rights to file complaints, seek protection orders and claim compensation under certain laws. This is general information, not legal advice.",
+        "Women and children have special protections under various statutes for sexual offences, domestic violence and trafficking. Seek immediate legal or social support if someone is at risk."
+      ]
+    },
+    {
+      "tag": "evidence_and_documents",
+      "patterns": [
+        "What is admissible evidence?",
+        "Are WhatsApp messages evidence?",
+        "Do photos and videos count as proof?",
+        "How should I preserve evidence?",
+        "How to get copies of police records?",
+        "What documents do I need to file a case?",
+        "What is chain of custody?",
+        "Can a document be challenged as forged?"
+      ],
+      "responses": [
+        "Admissible evidence must be relevant and obtained lawfully. Digital messages, photos and videos can be admitted if authenticity and chain of custody are established. Preserve originals, metadata and avoid altering evidence; seek legal advice early.",
+        "Official records like FIR copies or charge-sheets can be requested from the police station or through legal channels. A lawyer can help obtain records and guide evidence preservation steps."
+      ]
+    },
+    {
+      "tag": "finding_a_lawyer",
+      "patterns": [
+        "How do I find a lawyer?",
+        "Can you help me find legal counsel?",
+        "How to choose a lawyer for my case?",
+        "What questions should I ask a lawyer?",
+        "Do lawyers offer free consultation?",
+        "How much do lawyers charge?",
+        "How to find a specialist lawyer?",
+        "Can you suggest steps to hire counsel?"
+      ],
+      "responses": [
+        "Search for specialists in the relevant area (criminal, family, consumer), check local bar association directories, seek referrals and review experience. Ask about fees, expected steps and communication before hiring. This is informational, not an endorsement.",
+        "Many lawyers offer an initial consultation; costs vary by location and complexity (fixed fee, hourly, retainer). Ask for an engagement letter or terms in writing."
+      ]
+    },
+    {
+      "tag": "domestic_and_family_law",
+      "patterns": [
+        "How do I file for divorce?",
+        "What is maintenance and how to claim it?",
+        "What does 498A cover?",
+        "How to get protection in domestic violence?",
+        "Can I get custody of my child?",
+        "How to approach family court?",
+        "Options for alimony and support",
+        "What to do in case of dowry harassment?"
+      ],
+      "responses": [
+        "Family law covers divorce, maintenance, child custody and domestic violence remedies. Remedies and procedures differ for civil relief and criminal complaints. Keep documents and seek both legal and social support as appropriate.",
+        "If there is immediate danger, approach police and seek protection orders under relevant laws; for court remedies (custody, maintenance) consult a family lawyer who can guide filings and interim relief."
+      ]
+    },
+    {
+      "tag": "consumer_and_civil_relief",
+      "patterns": [
+        "How do I file a consumer complaint?",
+        "Can I sue for negligence?",
+        "How to claim compensation for an accident?",
+        "What remedies for breach of contract?",
+        "Where to file a civil suit?",
+        "Time limit for filing civil case",
+        "Small claims procedure",
+        "How to recover damages?"
+      ],
+      "responses": [
+        "Civil remedies include damages, injunctions and specific performance depending on the dispute. Consumer disputes are handled by consumer fora while other civil matters go to civil courts. Check limitation periods and consult a lawyer promptly.",
+        "In accidents preserve medical records, FIR (if applicable), and evidence — a lawyer can assess compensation claims and advise next steps."
+      ]
+    },
+    {
+      "tag": "safety_and_reporting",
+      "patterns": [
+        "How do I get emergency legal help?",
+        "Whom to call for immediate police response?",
+        "How to get protection orders?",
+        "What to do if threatened?",
+        "Where to report online harassment?",
+        "How to get legal aid in emergencies?",
+        "How to get protection for witnesses?",
+        "How to get a restraining order?"
+      ],
+      "responses": [
+        "In an emergency call local police/helpline and move to a safe place. Victim-support services and legal aid organisations can help with protection orders and immediate assistance. Preserve evidence and contact a lawyer or support service promptly.",
+        "For online harassment collect screenshots, note timestamps, and report to police or platforms; a lawyer can assist with takedown requests and criminal complaints where applicable."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [
+        "I don't know how to explain",
+        "This is complicated",
+        "I need help but not sure what to ask",
+        "Can you help me with this strange situation?",
+        "I have an unusual legal issue",
+        "Unsure where to start",
+        "Not sure what law applies"
+      ],
+      "responses": [
+        "I may be able to help if you describe the facts briefly (what happened, when, where, who is involved). Please provide a short, factual summary and I can point out commonly relevant legal topics. This is general information, not legal advice.",
+        "For complex or high-stakes matters (criminal charges, major financial disputes), it's best to consult an experienced lawyer who can review documents and represent you."
+      ]
+    },
+    {
+      "tag": "no_answer",
+      "patterns": [
+        "I don't understand",
+        "You can't answer this",
+        "No information available",
+        "You don't know",
+        "Can't help with this",
+        "I want a lawyer, not info"
+      ],
+      "responses": [
+        "I'm sorry, I don’t have the specific information to answer that. For case-specific legal help, please consult a qualified lawyer.",
+        "I can provide high-level legal information, but I can’t provide tailored legal advice or represent you. A lawyer can give case-specific guidance and representation."
+      ]
+    }
+  ]
+}

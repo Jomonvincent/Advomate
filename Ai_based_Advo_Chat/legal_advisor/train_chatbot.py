@@ -101,8 +101,12 @@ model.add(Dense(len(classes), activation="softmax"))
 sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True, weight_decay=1e-6)
 model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
 
-# Fit and save the model
+# Fit the model
 hist = model.fit(train_x, train_y, epochs=200, batch_size=5, verbose=1)
-model.save("chatbot_model.h5", hist)
 
-print("Model created")
+# Save model and preprocessing artifacts
+model.save("chatbot_model.h5")
+pickle.dump(words, open("words.pkl", "wb"))
+pickle.dump(classes, open("classes.pkl", "wb"))
+
+print("Model created and artifacts saved: chatbot_model.h5, words.pkl, classes.pkl")
