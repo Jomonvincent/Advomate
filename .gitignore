@@ -1,41 +1,119 @@
-# Python
+# ==========================
+# Python/Django Project Ignore
+# ==========================
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
+
+# C extensions
+*.pyd
+
+# Distribution / packaging
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
 *.egg-info/
-.installed.cfg
+.eggs/
 *.egg
+pip-wheel-metadata/
+wheels/
 MANIFEST
 
-# Virtual Environments
+# Virtual environments
+.env
+.env.*
+.venv/
 venv/
 myenv/
 env/
 ENV/
-.env
-.venv/
 
-# PyCharm/IntelliJ
-.idea/
-
-# VS Code
+# IDEs / Editors
 .vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Testing / Coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Type check / lint caches
+.mypy_cache/
+.pyre/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and runtime files
+*.log
+*.pid
+*.seed
+
+# Django
+*.pot
+local_settings.py
+db.sqlite3
+*.sqlite3
+/media/
+static/media/
+staticfiles/
+
+# Uploaded files / user data
+static/media/
+media/
+
+# Model & data artifacts (machine learning)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.bin
+
+# Data files (optional - ignore if large or generated)
+*.csv
+*.tsv
+*.dat
+*.parquet
+*.feather
+
+# Secrets
+credentials.json
+*.key
+*.pem
+secrets.yml
+env.*
+
+# Node / front-end (if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+*.pyc
+*/__pycache__/
+*.orig
+*.rej
+*.swp
+
+# End of file
+
