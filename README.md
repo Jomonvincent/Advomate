@@ -55,6 +55,3 @@ If you prefer, you can run the training script from inside the `Ai_based_Advo_Ch
 - If you accidentally committed large files, consider removing them from history (BFG or git filter-repo).
 - For reproducible environments, pin package versions in `requirements.txt` or use `pip freeze > requirements.txt` from a clean venv.
 
----
-
-If you'd like, I can also add a short CONTRIBUTING or DEVELOPING guide with step-by-step dev tasks and checks.  
